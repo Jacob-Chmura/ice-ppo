@@ -1,0 +1,45 @@
+default:
+  method: "ICE"
+  discretizer: "UniformDiscretizer"
+  method_config:
+      ICE:
+          beta_entropy: 0.01
+  discretizer_config:
+        UniformDiscretizer:
+            discretizer_dim: 256
+
+default_mice:
+  method: "MICE"
+  discretizer: "UniformDiscretizer"
+  method_config:
+      MICE:
+          beta_entropy: 0.01
+          beta_mutual: 0.01
+  discretizer_config:
+        UniformDiscretizer:
+            discretizer_dim: 256
+    
+bass_ice:
+  method: "ICE"
+  discretizer: "BassDiscretizer"
+  method_config:
+      ICE:
+          beta_entropy: 0.01
+  discretizer_config:
+        BassDiscretizer:
+            discretized_state_dim: 64
+            cell_size: 4
+            num_bins: 20
+
+bass_mice:
+  method: "MICE"
+  discretizer: "BassDiscretizer"
+  method_config:
+      MICE:
+          beta_entropy: 0.01
+          beta_mutual: 0.01
+  discretizer_config:
+        BassDiscretizer:
+            discretized_state_dim: 64
+            cell_size: 4
+            num_bins: 20    
